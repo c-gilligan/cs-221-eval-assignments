@@ -1,0 +1,17 @@
+CS 221 Numbers Evaluation Assignment Written Responses
+
+5. 
+	a. Max value: (2^43) - 1, Min value: 0
+	b. Max value: (2^21) - 1, Min value: -((2^21) - 1)
+	c. Max value: (2^11) - 1, Min value: 0
+	d. Max value: (2^5) - 1, Min value: -((2^5) - 1)
+
+6. I'm not 100% sure what this question is asking for, so I'm assuming that it's
+asking me to explain the differences in the bits. 
+	a. The largest non-infinite number that can be encoded by a tiny float is 0 1111 111. This represents a positive sign, an exponent of (15 - 8) = 7, and a significand of 1.7 (implied leading 1 added). The number represented here is 17,000,000.0. 
+
+	The second largest non-infinite number that can be encoded by a tiny float is 0 1111 110. This represents a positive sign, an exponent of (15 - 8) = 7, and a significand of 1.6 (implied leading 1 added). The number represented here is 16,000,000.0. 
+
+	b. The smallest positive number that can be encoded by a tiny float is 0 0000 001. This represents a positive sign, an exponent of (1 - 8) = -7 (denormalized encoding), and a significand of 0.1 (implied leading 0 added). The number represented here is 0.00000001. 
+
+	The second smallest positive number that can be encoded by a tiny float is 0 0000 010. This represents a positive sign, an exponent of (1 - 8) = -7 (denormalized encoding), and a significand of 0.2 (implied leading 0 added). The number represented here is 0.00000002.
