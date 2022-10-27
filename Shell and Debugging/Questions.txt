@@ -1,0 +1,6 @@
+Shell and Debugging Evaluation Assignment
+Connor Gilligan
+
+1. a. You would type out the absolute path of the executable. 
+b. The file is included in this folder.
+c. 
