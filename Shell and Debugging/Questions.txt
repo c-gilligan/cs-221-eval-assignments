@@ -1,6 +1,10 @@
 Shell and Debugging Evaluation Assignment
 Connor Gilligan
 
-1. a. You would type out the absolute path of the executable. 
-b. The file is included in this folder.
-c. 
+1. 	a. You would type out the absolute path of the executable. 
+	b. The file is included in this folder.
+	c. 
+
+2. 	a. This project's version control is done through GitHub. 
+	b. If you have secured the permission of your collaborators, or you want to piss off all your collaborators, or you're the only collaborator, you can run "git reset --hard <COMMIT_HASH>" to reset the entire repository to the specified commit. 
+	c. Branches in version control are places where the changes made to the code diverge. They're useful because they allow you to collaborate on and test code without pushing it to the production branch. This allows you to wait until it's stable and tested to merge it back into the production branch. 
