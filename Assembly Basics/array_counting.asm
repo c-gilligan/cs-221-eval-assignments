@@ -69,25 +69,25 @@ loop:
 below_ranges:
 	addi $s0, $s0, 1 		# Increment $s0
 	addi $s7, $s7, -1 		# Decrement $a1
-	addi $a3, $a3, -32 		# Decrease $a3 by 4
+	addi $a3, $a3, -32 		# Decrement $a3 by 32
 	j loop
 
 range_1:
 	addi $s1, $s1, 1 		# Increment $s1
 	addi $s7, $s7, -1 		# Decrement $a1
-	addi $a3, $a3, -32 		# Decrease $a3 by 4
+	addi $a3, $a3, -32 		# Decrement $a3 by 32
 	j loop
 
 range_2: 
 	addi $s2, $s2, 1 		# Increment $s2
 	addi $s7, $s7, -1 		# Decrement $a1
-	addi $a3, $a3, -32 		# Decrease $a3 by 4
+	addi $a3, $a3, -32 		# Decrement $a3 by 32
 	j loop
 
 above_ranges: 
 	addi $s3, $s3, 1 		# Increment $s3
 	addi $s7, $s7, -1 		# Decrement $a1
-	addi $a3, $a3, -32 		# Decrease $a3 by 4
+	addi $a3, $a3, -32 		# Decrement $a3 by 32
 	j loop
 
 return: 
