@@ -18,7 +18,7 @@ public:
 		double required_fuel;
 
 		distance = abs(((this -> pos_x) - new_x) / ((this -> pos_y) - new_y));
-		required_fuel = distance * (this -> fuel_efficiency);
+		required_fuel = distance / (this -> fuel_efficiency);
 
 		if (required_fuel <= (this -> fuel)) {
 			// Move car to destination
@@ -38,7 +38,7 @@ public:
 		double required_fuel;
 
 		distance = abs(((this -> pos_x) - new_x) / ((this -> pos_y) - new_y));
-		required_fuel = distance * (this -> fuel_efficiency);
+		required_fuel = distance / (this -> fuel_efficiency);
 
 		if (required_fuel <= (this -> fuel)) return true;
 		else return false;
