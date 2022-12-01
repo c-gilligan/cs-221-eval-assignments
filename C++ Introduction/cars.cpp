@@ -7,15 +7,7 @@ using namespace std;
 
 class Car {
 public:
-	Car (double fuel_capacity, double efficiency){
-		tank_size = fuel_capacity;
-		fuel = fuel_capacity;
-		fuel_efficiency = efficiency;
-
-		double pos_x = 0.0;
-		double pos_y = 0.0;
-	}
-
+	Car (double fuel_capacity, double efficiency);
 	bool move_to(double new_x, double new_y) {
 		double distance;
 		double required_fuel;
@@ -55,6 +47,15 @@ private:
 	double tank_size;
 	double fuel;
 };
+
+Car::Car (double fuel_capacity, double efficiency){
+	tank_size = fuel_capacity;
+	fuel = fuel_capacity;
+	fuel_efficiency = efficiency;
+
+	double pos_x = 0.0;
+	double pos_y = 0.0;
+}
 
 /* 
 To Do: 
