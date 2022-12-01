@@ -11,6 +11,9 @@ public:
 		tank_size = fuel_capacity;
 		fuel = fuel_capacity;
 		fuel_efficiency = efficiency;
+
+		double pos_x = 0.0;
+		double pos_y = 0.0;
 	}
 
 	bool move_to(double new_x, double new_y) {
@@ -62,15 +65,16 @@ To Do:
 - Write can_move tests
 */
 
-vector<Car> can_move(double dest_x, double dest_y, vector<Car> cars) {
-	shared_ptr<vector<Car>> cars_able;
+shared_ptr<vector<Car> >can_move(double dest_x, double dest_y, vector<Car> cars) {
+	shared_ptr<vector<Car> > cars_able;
 
-	for(i = 0; i < (cars.size() - 1); i++) {
-		if (cars[i].can_move(dest_x,dest_y)) {
+
+	for(int i = 0; i < (cars.size() - 1); i++) {
+		if (cars[i].enough_fuel(dest_x,dest_y)) {
 			Car car_copy = cars[i];
 
 			car_copy.move_to(dest_x,dest_y);	// Move car copy to destination
-			cars_able.push_back(car_copy);		// Add car copy to output list
+			cars_able -> push_back(car_copy);		// Add car copy to output list
 		}
 	}
 
