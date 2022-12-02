@@ -11,7 +11,7 @@ public:
 	shared_ptr<Node> next;	// loops that would cause memory leaks
 }
 
-// Note to self, make next pointers shared and prev pointers weak
+
 class SortedList {
 public:
 	enum how_sorted{length, chars};
@@ -60,9 +60,41 @@ public:
 				new_node -> prev = this -> last;
 				this -> last = new_node;
 
+				return 0;
+
 			case chars:
-				
+				// Special case: if new value < first element
+				if(new_value.compare((this -> first).value) <= 0){
+					(this -> first).prev = new_node;
+					new_node -> next = this -> first;
+					(this -> first) = new_node;
+
+					return 0;
+				}
+
+				Node* current = this -> first;
+				while (current -> next != nullptr) {
+					if (new_value.compare(current.value) <= 0){
+						// Insert into list
+						new_node -> next = current;
+						new_node -> prev = current -> prev;
+						current -> prev = new_node;
+
+						return 0; 
+					} else{
+						current = current -> next;
+					}
+				}
+
+				// If new value is greater than all elements, insert as last node
+				(this -> last).next = new_node;
+				new_node -> prev = this -> last;
+				this -> last = new_node;
+
+				return 0;
 		}
+
+	return -1; // Failure
 	}
 
 	enum how_sorted current_sorting() {
