@@ -43,13 +43,25 @@ public:
 				Node* current = this -> first;
 				while (current -> next != nullptr) {
 					if(new_value.size() <= current -> length){
+						// Insert into list
 						new_node -> next = current;
 						new_node -> prev = current -> prev;
 						current -> prev = new_node;
+
+						return 0;
+					} else{ 
+						// Move to next node
+						current = current -> next;
 					}
 				}
 
+				// If new value is greater than all elements, insert as last node
+				(this -> last).next = new_node;
+				new_node -> prev = this -> last;
+				this -> last = new_node;
+
 			case chars:
+				
 		}
 	}
 
