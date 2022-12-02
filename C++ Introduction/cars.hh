@@ -10,6 +10,7 @@ public:
 	bool move_to(double new_x, double new_y);
 	bool enough_fuel(double new_x, double new_y);
 	bool operator== (const Car& other);
+	double refill_amount();
 
 private:
 	double pos_x;
@@ -19,6 +20,9 @@ private:
 	double tank_size;
 	double fuel;
 };
-#endif
+#endif 
+
+// This is the worst function signature I've ever seen
+pair <vector<Car>, vector<double> > road_trip(double dest_x, double dest_y, vector<Car> cars, vector<GasStation> gas_stations);
 
 std::shared_ptr<std::vector<Car> >can_move(double dest_x, double dest_y, std::vector<Car> cars);
