@@ -1,6 +1,7 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <string>
 #include "cars.hh"
 
 using namespace std;
@@ -126,5 +127,10 @@ public:
 
 
 private:
+	// Used string and vector of strings so that providers can have more than one role
+	map<string, vector<string> > providers;
 
+	// Used string rather than vector for patient condition because the instructions
+	// said condition (singular)
+	map<string, string> patients;
 }
