@@ -1,6 +1,9 @@
 #include <vector>
+#include <map>
 #include <memory>
 #include "cars.hh"
+
+using namespace std;
 
 class Bus : public Car {
 public: 
@@ -116,5 +119,12 @@ private:
 	int max_passengers;
 	vector<int> stop_numbers;
 	double mileage_penalty;
+}
+
+class MedicalCenter {
+public:
+
+
+private:
 
 }
