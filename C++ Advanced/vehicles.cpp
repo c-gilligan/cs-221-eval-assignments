@@ -159,8 +159,40 @@ public:
 		} else return false;
 	}
 
+	bool enough_fuel(double new_x, double new_y) {
+		double distance;
+		double required_fuel;
+
+		distance = sqrt( pow(new_x - (this -> pos_x), 2) + pow(new_y - (this -> pos_y), 2));
+		
+		// Incorporate mileage penalty per passenger into fuel calculations
+		total_penalty = mileage_penalty * ((this -> patients.size()) + (this -> providers.size()));
+		required_fuel = distance / ((this -> fuel_efficiency) + total_penalty);
+
+		if (required_fuel <= (this -> fuel)) return true;
+		else return false;
+	}
 private:
 	int max_patients;
 	int max_providers;
 	int mileage_penalty;
+}
+
+// 
+template <typename T>
+<vector<unique_ptr<T> >improved_can_move(double dest_x, double dest_y, vector<unique_ptr<T> > cars) {
+	vector<T> cars_able;
+
+
+	for(int i = 0; i < (cars.size() - 1); i++) {
+		if (cars[i] -> enough_fuel(dest_x,dest_y)) {
+			// Duplicate car by implicitly calling copy constructor
+			T car_copy = *cars[i];
+
+			car_copy.move_to(dest_x,dest_y);	// Move car copy to destination
+			cars_able.push_back(car_copy);		// Add car copy to output list
+		}
+	}
+
+	return cars_able;
 }
